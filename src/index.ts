@@ -9,7 +9,7 @@ import tagRouter from './routes/tag';
 dotenv.config();
 
 // define http port
-const port = process.env.NODE_ENV ?? 8000; 
+const port = process.env.REST_PORT ?? 8000; 
 
 const app: Express = express(); // defining the Express app
 app.use(helmet()); // adding Helmet to enhance your Rest API's security

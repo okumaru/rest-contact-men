@@ -7,6 +7,21 @@ This repository created because author want to learn TS.
 - NodeJS : v16.13+
 - and, Please check on [package.json](https://github.com/okumaru/rest-contact-men/blob/main/package.json)
 
+## Running Docker
+
+This method required docker installed.
+This 2 option you can use,
+
+1. not detached process
+```bash
+docker-compose up
+```
+
+2. detached process
+```bash
+docker-compose up -d
+```
+
 ## Running Locally
 
 This application requires Node.js v16.13+.
