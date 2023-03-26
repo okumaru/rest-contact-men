@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+
+  api:
+    container_name: api
+    image: rest-contact-men
+    build: .
+    depends_on:
+      - mongo
+    environment:
+      REST_PORT: 8000
+    volumes:
+      - ./src:/usr/app/src
+    ports:
+      - "8000:8000"
+
+  mongo:
+    container_name: mongodb
+    image: "mongo"
+    ports:
+      - "27017:27017"
