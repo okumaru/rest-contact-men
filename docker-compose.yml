@@ -10,6 +10,7 @@ services:
       - mongo
     environment:
       REST_PORT: 8000
+      DATABASE_URL: mongodb://mongo:27017/contact_db
     volumes:
       - ./src:/usr/app/src
     ports:
