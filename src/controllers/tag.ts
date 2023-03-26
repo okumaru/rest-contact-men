@@ -91,7 +91,6 @@ const updateTag = async (req: Request, res: Response) => {
 
   try { 
 
-    // TODO: add/remove data contact from tag
     const updatedTag = await TagModel.findByIdAndUpdate(_id, {...tag, _id}, { new: true});
     res.json(updatedTag);
 
