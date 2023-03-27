@@ -1,5 +1,6 @@
 import request from 'supertest';
 import app from '../src/app';
+import mongoose from 'mongoose';
 
 let res: any;
 const data: Object = {
@@ -53,4 +54,9 @@ describe("Delete tag request working well", () => {
   test("Success - Response type is json", () => {
     expect(res.type).toEqual('application/json');
   });
+});
+
+afterAll(async () => {
+  // Closing the DB connection allows Jest to exit successfully.
+  mongoose.connection.close();
 });

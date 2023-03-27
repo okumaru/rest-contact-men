@@ -1,5 +1,6 @@
 import request from 'supertest';
 import app from '../src/app';
+import mongoose from 'mongoose';
 
 let res: any;
 
@@ -19,4 +20,9 @@ describe("Node & Express working well", () => {
   test("Index route response is exist", () => {
     expect(res.text).toEqual('Express + TypeScript Server');
   })
+});
+
+afterAll(async () => {
+  // Closing the DB connection allows Jest to exit successfully.
+  mongoose.connection.close();
 });
