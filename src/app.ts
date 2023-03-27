@@ -1,15 +1,9 @@
 import cors from 'cors';
-import dotenv from 'dotenv';
 import express, { Express, Request, Response } from 'express';
 import helmet from 'helmet';
 
 import contactRouter from './routes/contact';
 import tagRouter from './routes/tag';
-
-dotenv.config();
-
-// define http port
-const port = process.env.REST_PORT ?? 8000; 
 
 const app: Express = express(); // defining the Express app
 app.use(helmet()); // adding Helmet to enhance your Rest API's security
@@ -23,5 +17,4 @@ app.get('/', (req: Request, res: Response) => res.send('Express + TypeScript Ser
 app.use('/contact', contactRouter)
 app.use('/tag', tagRouter)
 
-// starting the server
-app.listen(port, () => console.log(`⚡️[server]: Server is running at http://localhost:${port}`));
+export default app;
